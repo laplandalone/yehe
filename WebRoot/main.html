@@ -1,0 +1,442 @@
+﻿<!DOCTYPE html><html><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <meta charset="UTF-8">
+    <title>weixin://private/setresult/SCENE_FETCHQUEUE&amp;eyJmdW5jIjoibG9nIiwicGFyYW1zIjp7Im1zZyI6Il9ydW5PbjNyZEFwaUxpc3QgOiBtZW51OnNoYXJlOnRpbWVsaW5lLG1lbnU6c2hhcmU6YXBwbWVzc2FnZSxvblZvaWNlUmVjb3JkRW5kLG9uVm9pY2VQbGF5QmVnaW4sb25Wb2ljZVBsYXlFbmQsb25Mb2NhbEltYWdlVXBsb2FkUHJvZ3Jlc3Msb25JbWFnZURvd25sb2FkUHJvZ3Jlc3Msb25Wb2ljZVVwbG9hZFByb2dyZXNzLG9uVm9pY2VEb3dubG9hZFByb2dyZXNzLG1lbnU6c2V0Zm9udCxtZW51OnNoYXJlOndlaWJvLG1lbnU6c2hhcmU6ZW1haWwsd3hkb3dubG9hZDpzdGF0ZV9jaGFuZ2UsaGRPbkRldmljZVN0YXRlQ2hhbmdlZCxhY3Rpdml0eTpzdGF0ZV9jaGFuZ2UifSwiX19tc2dfdHlwZSI6ImNhbGwiLCJfX2NhbGxiYWNrX2lkIjoiMTAwMCJ9</title>
+    <link rel="stylesheet" href="http://social.lifeq.com.cn/Public/css/weixin/idangerous.swiper.css">
+    <!-- <link rel="stylesheet" href="css/life_base.css">
+    <link rel="stylesheet" href="css/life_main.css"> -->
+    <style>
+        *{font-family:"微软雅黑";}
+        html{background-color:#EEEEEE;}
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #EEEEEE;
+        }
+        .device {
+
+            width: 100%;
+            height: 20%;
+            margin: 0px auto;
+            position: relative;
+
+        }
+        .swiper-container {
+            width: 100%;
+        }
+        .content-slide {
+            padding: 20px;
+            color: #fff;
+        }
+        .swiper-slide img
+        {
+            width: 100%;
+        }
+        .title {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+        .pagination {
+            position: absolute;
+            left: 0;
+            text-align: center;
+            bottom:-5px;
+            z-index: 10;
+            width: 100%;
+        }
+        .swiper-pagination-switch {
+            display: inline-block;
+            width: 25%;
+            height: 5px;
+
+            background-image: url('http://social.lifeq.com.cn/Public/image/img/sm_bg_line.png');
+            margin: 0 0px;
+            cursor: pointer;
+        }
+        .swiper-active-switch {
+            background: #D90000;
+        }
+
+        .clear{
+            clear:both;
+        }
+        .section_1{
+            width: 100%;
+            background:#fff;
+            overflow-x: hidden;
+        }
+        .section_1 a
+        {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+        }
+        .section_1_box{
+            display: block;
+            float: left;
+            padding: 20px 0;
+            width: 25%;
+            text-align: center;
+        }
+        .section_1_box img{
+            width: 40px;
+        }
+        .section_2{
+            padding: 5px 0;
+            width: 100%;
+            background:#fff;
+            margin-top: 20px;
+            overflow-x: hidden;
+
+        }
+        .section_2_box{
+            float: left;
+            display: block;
+            margin-right: -1px;
+            width:50%;
+            border-right: 1px solid #EFEFEF;
+            text-align: center;
+        }
+        .section_2_box img{
+            width: 140px;
+        }
+        .section_3{
+
+            width: 100%;
+            background:#fff;
+            margin-top: 20px;
+            overflow-x: hidden;
+        }
+        .section_3_box{
+            padding: 10px 0;
+            float: left;
+            display: block;
+            margin-right: -1px;
+            width:50%;
+            border-right: 1px solid #EFEFEF;
+            border-bottom: 1px solid #EFEFEF;
+            text-align: center;
+            text-decoration: none;
+        }
+        .section_3_box img{
+            width: 35px;
+            height: 35px;
+        }
+        /*a:active{
+            -webkit-transform:scale(0.8,0.8);
+        }*/
+        .section_3_text{
+            float: left;
+            margin-left: 14px;
+            text-align: left;
+            width: 96px;
+            position: relative;
+            top: 2px;
+			height:35px;
+        }
+        .section_3_title{
+            margin: 0;
+            color: #333;
+            font-size: 14px;
+        }
+        .section_3_descript{
+            margin: 0;
+            color: #999999;
+            font-size: 12px;
+        }
+        .section_2 a
+        {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+        }
+        .section_2_tit
+        {
+            float: left;
+            margin-left: 10%;
+            position: relative;
+            font-size: 13px;
+            top: 15px;
+        }
+        .section_2_pic
+        {
+            float: right;
+            margin-right: 14%;
+        }
+        .section_2_pic img
+        {
+            width: 40px;
+            position: relative;
+            top: 2px;
+        }
+        .section_1_tit
+        {
+            margin-top: 3px;
+            font-size: 12px;
+        }
+		.hideloadingpage{
+          position: fixed;
+          width: 100%;
+          background-color: #fff;
+          z-index: 999;
+          top: 0;
+        }
+        .waiting_gif
+        {
+            width: 100%;
+            text-align: center;
+        }
+        .waiting_gif img
+        {
+            width: 95px;
+        }
+        .waiting_word
+        {
+            width: 100%;
+            text-align: center;
+            color: #B8BDC5;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="hideloadingpage" style="height: 100%; display: none; background: rgb(255, 255, 255);">
+	<div style="height:10px;margin-top:50%;"></div>
+   <div class="waiting_gif">
+		<img src="http://koalac-face.b0.upaiyun.com/Attachment//upload/55a324894ec77.gif" style="max-width: 180px;">
+	</div>
+	<div class="waiting_word">
+		主银等等, 马上就到
+	</div>
+</div>
+<div class="device">
+    <div class="swiper-container" style="cursor: -webkit-grab; height: 340.4px;">
+        <div class="swiper-wrapper" style="width: 3700px; height: 21px; transform: translate3d(-2220px, 0px, 0px); -webkit-transform: translate3d(-2220px, 0px, 0px); transition: 0.75s; -webkit-transition: 0.75s;"><div class="swiper-slide" style="width: 740px; height: 21px;"> <a href="/index.php/WeiXin/Service/slide/id/7.html"><img src="http://koalac-face.b0.upaiyun.com/Attachment//upload/slide/55c1b9dc8edd3.jpg" style="height: 340.4px;"></a></div>
+           <div class="swiper-slide" style="width: 740px; height: 21px;"> <a href="/index.php/WeiXin/Service/slide/id/1.html"><img src="http://koalac-face.b0.upaiyun.com/Attachment//upload/slide/55a323f1d593e.jpg" style="height: 340.4px;"></a></div><div class="swiper-slide" style="width: 740px; height: 21px;"> <a href="/index.php/WeiXin/Service/slide/id/2.html"><img src="http://koalac-face.b0.upaiyun.com/Attachment//upload/slide/55a323da12a18.jpg" style="height: 340.4px;"></a></div><div class="swiper-slide swiper-slide-visible swiper-slide-active" style="width: 740px; height: 21px;"> <a href="/index.php/WeiXin/Service/slide/id/7.html"><img src="http://koalac-face.b0.upaiyun.com/Attachment//upload/slide/55c1b9dc8edd3.jpg" style="height: 340.4px;"></a></div>        <div class="swiper-slide" style="width: 740px; height: 21px;"> <a href="/index.php/WeiXin/Service/slide/id/1.html"><img src="http://koalac-face.b0.upaiyun.com/Attachment//upload/slide/55a323f1d593e.jpg" style="height: 340.4px;"></a></div></div>
+    </div>
+    <div class="pagination"><span class="swiper-pagination-switch"></span><span class="swiper-pagination-switch"></span><span class="swiper-pagination-switch swiper-visible-switch swiper-active-switch"></span></div>
+</div>
+<div class="section_1">
+    <a href="/index.php/WeiXin/Service/jump/id/74.html" id="74" class="section_1_box a_jump">
+            <div><img src="http://shq-pic.b0.upaiyun.com/201504/16/1_142918076092XW.png" alt="小区通知"></div>
+            <div class="section_1_tit">小区通知</div>
+        </a><a href="/index.php/WeiXin/Service/jump/id/75.html" id="75" class="section_1_box a_jump">
+            <div><img src="http://shq-pic.b0.upaiyun.com/201504/16/1_142918090552YX.png" alt="物业服务"></div>
+            <div class="section_1_tit">物业服务</div>
+        </a><a href="/index.php/WeiXin/Service/jump/id/77.html" id="77" class="section_1_box a_jump">
+            <div><img src="http://shq-pic.b0.upaiyun.com/201504/16/1_14291809469LWW.png" alt="便民电话"></div>
+            <div class="section_1_tit">便民电话</div>
+        </a><a href="/index.php/WeiXin/Service/jump/id/78.html" id="78" class="section_1_box a_jump">
+            <div><img src="http://shq-pic.b0.upaiyun.com/201504/16/1_14291809661p1p.png" alt="业主认证"></div>
+            <div class="section_1_tit">业主认证</div>
+        </a></div>
+
+<div class="section_2">
+    <a href="/index.php/WeiXin/Service/jump/id/82.html" id="82" class="section_2_box a_jump">
+        <div class="section_2_tit">考拉商城</div>
+        <div class="section_2_pic"><img src="http://shq-pic.b0.upaiyun.com/201504/16/1_1429181116dv13.png" alt="考拉商城"></div>
+        <div class="clear"></div>
+    </a><a href="/index.php/WeiXin/Service/jump/id/86.html" id="86" class="section_2_box a_jump">
+        <div class="section_2_tit">周边商家</div>
+        <div class="section_2_pic"><img src="http://shq-pic.b0.upaiyun.com/201504/16/1_1429181152t0fp.png" alt="周边商家"></div>
+        <div class="clear"></div>
+    </a></div>
+
+<div class="section_3">
+    <a href="/index.php/WeiXin/Service/jump/id/139.html" id="139" class="section_3_box a_jump">
+            <div class="section_3_text">
+                <p class="section_3_title">融资易</p>
+                <p class="section_3_descript">会理财，更赚钱</p>
+            </div>
+            <img src="http://koalac-face.b0.upaiyun.com/Attachment//upload/plugin/55b1db9989d4c.jpg" alt="融资易">
+        </a><a href="/index.php/WeiXin/Service/jump/id/160.html" id="160" class="section_3_box a_jump">
+            <div class="section_3_text">
+                <p class="section_3_title">58到家保洁</p>
+                <p class="section_3_descript">家庭保洁我最大</p>
+            </div>
+            <img src="http://koalac-face.b0.upaiyun.com/Attachment//upload/plugin/55c1bcd5c621f.png" alt="58到家保洁">
+        </a><a href="/index.php/WeiXin/Service/jump/id/123.html" id="123" class="section_3_box a_jump">
+            <div class="section_3_text">
+                <p class="section_3_title">嗒嗒巴士</p>
+                <p class="section_3_descript">嗒嗒送你上下班</p>
+            </div>
+            <img src="http://shq-pic.b0.upaiyun.com/201506/19/1_1434708204T6tT.png" alt="嗒嗒巴士">
+        </a><a href="/index.php/WeiXin/Service/jump/id/124.html" id="124" class="section_3_box a_jump">
+            <div class="section_3_text">
+                <p class="section_3_title">美容总监</p>
+                <p class="section_3_descript">上门美容第一家</p>
+            </div>
+            <img src="http://shq-pic.b0.upaiyun.com/201506/19/1_1434708308GXlw.jpg" alt="美容总监">
+        </a><a href="/index.php/WeiXin/Service/jump/id/118.html" id="118" class="section_3_box a_jump">
+            <div class="section_3_text">
+                <p class="section_3_title">聚爱财</p>
+                <p class="section_3_descript">聚爱财安全理财</p>
+            </div>
+            <img src="http://shq-pic.b0.upaiyun.com/201506/10/1_1433926444bjaJ.png" alt="聚爱财">
+        </a><a href="/index.php/WeiXin/Service/jump/id/117.html" id="117" class="section_3_box a_jump">
+            <div class="section_3_text">
+                <p class="section_3_title">e家帮</p>
+                <p class="section_3_descript">1分钟找好阿姨</p>
+            </div>
+            <img src="http://shq-pic.b0.upaiyun.com/201506/9/1_14338362491y21.jpg" alt="e家帮">
+        </a><a href="/index.php/WeiXin/Service/jump/id/114.html" id="114" class="section_3_box a_jump">
+            <div class="section_3_text">
+                <p class="section_3_title">找到优惠</p>
+                <p class="section_3_descript">给你更多优惠</p>
+            </div>
+            <img src="http://shq-pic.b0.upaiyun.com/201506/3/1_1433326946gsEK.png" alt="找到优惠">
+        </a><a href="/index.php/WeiXin/Service/jump/id/68.html" id="68" class="section_3_box a_jump">
+            <div class="section_3_text">
+                <p class="section_3_title">物业账单</p>
+                <p class="section_3_descript">物业费有优惠</p>
+            </div>
+            <img src="http://shq-pic.b0.upaiyun.com/201504/1/1_14278840746zF6.png" alt="物业账单">
+        </a><a href="/index.php/WeiXin/Service/jump/id/103.html" id="103" class="section_3_box a_jump">
+            <div class="section_3_text">
+                <p class="section_3_title">麦淘亲子游</p>
+                <p class="section_3_descript">和孩子探索世界！</p>
+            </div>
+            <img src="http://shq-pic.b0.upaiyun.com/201505/21/1_1432180596TRC1.jpg" alt="麦淘亲子游">
+        </a><a href="/index.php/WeiXin/Service/jump/id/101.html" id="101" class="section_3_box a_jump">
+            <div class="section_3_text">
+                <p class="section_3_title">熊猫拿拿</p>
+                <p class="section_3_descript">在家也能推拿</p>
+            </div>
+            <img src="http://shq-pic.b0.upaiyun.com/201505/19/1_14320095532s26.png" alt="熊猫拿拿">
+        </a><a href="/index.php/WeiXin/Service/jump/id/107.html" id="107" class="section_3_box a_jump">
+            <div class="section_3_text">
+                <p class="section_3_title">96大洗啦</p>
+                <p class="section_3_descript">干洗足不出户</p>
+            </div>
+            <img src="http://shq-pic.b0.upaiyun.com/201505/26/1_14326113876K61.jpg" alt="96大洗啦">
+        </a><a href="/index.php/WeiXin/Service/jump/id/94.html" id="94" class="section_3_box a_jump">
+            <div class="section_3_text">
+                <p class="section_3_title">美颜家</p>
+                <p class="section_3_descript">专业上门美容</p>
+            </div>
+            <img src="http://shq-pic.b0.upaiyun.com/201505/6/1_14308990636dd5.png" alt="美颜家">
+        </a><a href="/index.php/WeiXin/Service/jump/id/95.html" id="95" class="section_3_box a_jump">
+            <div class="section_3_text">
+                <p class="section_3_title">财360</p>
+                <p class="section_3_descript">理财·金融·社交</p>
+            </div>
+            <img src="http://shq-pic.b0.upaiyun.com/201505/7/1_1430967292aCJZ.jpg" alt="财360">
+        </a><a href="/index.php/WeiXin/Service/jump/id/9.html" id="9" class="section_3_box a_jump">
+            <div class="section_3_text">
+                <p class="section_3_title">帮助</p>
+                <p class="section_3_descript">不懂？点我</p>
+            </div>
+            <img src="http://shq-pic.b0.upaiyun.com/201411/27/1_141705823567uz.png" alt="帮助">
+        </a><a href="/index.php/WeiXin/Service/jump/id/49.html" id="49" class="section_3_box a_jump">
+            <div class="section_3_text">
+                <p class="section_3_title">爱洗吧</p>
+                <p class="section_3_descript">洗刷刷洗刷刷</p>
+            </div>
+            <img src="http://shq-pic.b0.upaiyun.com/201502/6/1_1423208914Pkue.png" alt="爱洗吧">
+        </a><a href="/index.php/WeiXin/Service/jump/id/51.html" id="51" class="section_3_box a_jump">
+            <div class="section_3_text">
+                <p class="section_3_title">快快租车</p>
+                <p class="section_3_descript">车车车车来了</p>
+            </div>
+            <img src="http://shq-pic.b0.upaiyun.com/201502/13/1_1423793170nJwC.png" alt="快快租车">
+        </a><a href="/index.php/WeiXin/Service/jump/id/47.html" id="47" class="section_3_box a_jump">
+            <div class="section_3_text">
+                <p class="section_3_title">爱大厨</p>
+                <p class="section_3_descript">想吃啥？点</p>
+            </div>
+            <img src="http://shq-pic.b0.upaiyun.com/201501/31/1_14226684960raE.png" alt="爱大厨">
+        </a><a href="/index.php/WeiXin/Service/jump/id/87.html" id="87" class="section_3_box a_jump">
+            <div class="section_3_text">
+                <p class="section_3_title">小区活动</p>
+                <p class="section_3_descript">邻居们出来玩</p>
+            </div>
+            <img src="http://shq-pic.b0.upaiyun.com/201504/16/1_1429186960ibhu.png" alt="小区活动">
+        </a><a href="/index.php/WeiXin/Service/jump/id/44.html" id="44" class="section_3_box a_jump">
+            <div class="section_3_text">
+                <p class="section_3_title">太医健康</p>
+                <p class="section_3_descript">你健康我快乐</p>
+            </div>
+            <img src="http://shq-pic.b0.upaiyun.com/201501/23/1_1421994908x1Iv.png" alt="太医健康">
+        </a><a href="/index.php/WeiXin/Service/jump/id/81.html" id="81" class="section_3_box a_jump">
+            <div class="section_3_text">
+                <p class="section_3_title">家政无忧</p>
+                <p class="section_3_descript">家里我最能干</p>
+            </div>
+            <img src="http://shq-pic.b0.upaiyun.com/201504/16/1_1429181090tq0M.png" alt="家政无忧">
+        </a><a href="/index.php/WeiXin/Service/jump/id/48.html" id="48" class="section_3_box a_jump">
+            <div class="section_3_text">
+                <p class="section_3_title">好慷家政</p>
+                <p class="section_3_descript">开启幸福时光</p>
+            </div>
+            <img src="http://shq-pic.b0.upaiyun.com/201412/18/1_14188766323h1u.png" alt="好慷家政">
+        </a><a href="/index.php/WeiXin/Service/jump/id/38.html" id="38" class="section_3_box a_jump">
+            <div class="section_3_text">
+                <p class="section_3_title">就医160</p>
+                <p class="section_3_descript">轻松简单就医</p>
+            </div>
+            <img src="http://shq-pic.b0.upaiyun.com/201412/15/1_1418642167fOZ4.png" alt="就医160">
+        </a><a href="/index.php/WeiXin/Service/jump/id/79.html" id="79" class="section_3_box a_jump">
+            <div class="section_3_text">
+                <p class="section_3_title">e袋洗</p>
+                <p class="section_3_descript">每袋都是99</p>
+            </div>
+            <img src="http://shq-pic.b0.upaiyun.com/201504/16/1_1429181022Kn1e.png" alt="e袋洗">
+        </a><a href="/index.php/WeiXin/Service/jump/id/99.html" id="99" class="section_3_box a_jump">
+            <div class="section_3_text">
+                <p class="section_3_title">美食直播</p>
+                <p class="section_3_descript">南澳食验室</p>
+            </div>
+            <img src="http://shq-pic.b0.upaiyun.com/201505/13/1_1431505644kp3O.png" alt="美食直播">
+        </a></div>
+
+<script type="text/javascript" src="http://social.lifeq.com.cn/Public/script/jquery.min.js"></script>
+<script type="text/javascript" src="http://social.lifeq.com.cn/Public/script/idangerous.swiper-2.1.min.js"></script>
+<script type="text/javascript">
+    //头部展示图适应屏幕
+    window.onload=function(){
+        var a2=parseInt($('.swiper-slide img').css('width') );
+        var a3=a2*0.46;
+        $('.swiper-container').css({height:a3 + 'px'});
+        $('.swiper-slide img').css({height:a3 + 'px'});
+		$('.hideloadingpage').hide();
+        //  alert(a3);
+        //   alert($('.swiper-slide img').css('width'));
+    }
+    //消息提示为0的话，提示框消失
+    $(function(){
+        for( var i = 0;i<8;i++){
+            if($('.csb_num').eq( i).html()==0){
+                $('.csb_num').eq( i).css({opacity:'0'});
+            }
+            else{
+                $('.csb_num').eq( i).css({opacity:'1'});
+            }
+        }
+    })
+    //顶部图片滑动代码↓
+    var mySwiper = new Swiper('.swiper-container',{
+        speed:750,
+        autoplay:3000,
+        autoplayDisableOnInteraction: false,
+        autoplayStopOnLast:true,
+
+        pagination: '.pagination',
+        loop:true,
+        grabCursor: true,
+        paginationClickable: true
+    })
+
+    //返回顶部代码↓
+    $("#btn_top").click(function () {
+        $("html, body").animate({scrollTop:0}, 600);
+        return false;
+    })
+    //百度统计↓
+     var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+     document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F6441b3fc89a8fffd1e6d64c9314a15b0' type='text/javascript'%3E%3C/script%3E"));
+</script><script src=" http://hm.baidu.com/h.js?6441b3fc89a8fffd1e6d64c9314a15b0" type="text/javascript"></script>
+
+</body><iframe id="__WeixinJSBridgeIframe_SetResult" style="display: none;"></iframe><iframe id="__WeixinJSBridgeIframe" style="display: none;"></iframe></html>
